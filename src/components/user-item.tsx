@@ -17,14 +17,15 @@ function UserItem({ user }: UserItemProps) {
   return (
     <div
       ref={setNodeRef}
-      {...attributes}
-      {...listeners}
       style={style}
       className={`w-fit flex items-center bg-blue-200 p-2 rounded-md`}
     >
       <div className={`w-12`}>{user.id}</div>
       <div className={`w-24`}>{user.name}</div>
       <div className={`w-32 overflow-hidden overflow-ellipsis whitespace-nowrap`}>{user.email}</div>
+      <button {...attributes} {...listeners} className='w-12 cursor-move'>
+        排序
+      </button>
     </div>
   );
 }
